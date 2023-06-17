@@ -181,27 +181,33 @@ TempAndHumidity  data = dhtSensor.getTempAndHumidity();
   }
 }
 ```
-2. Realizar la conecion del circuito
+2. Con las librerias
+![](https://github.com/DavidVar95/Practica-temp-hum-y-dist-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2010.47.00.png?raw=true)
 
-![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2021.14.27.png?raw=true)
+3. Realizar la conecion del circuito
 
-3. Se realiza el programa en bloques para node red
+![](https://github.com/DavidVar95/Practica-temp-hum-y-dist-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2010.34.22.png?raw=true)
 
-![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2021.53.14.png?raw=true)
+4. Se realiza el programa en bloques para node red
 
-4. colocamos un bloque mqttin y lo vinculamos con el programa en WOKWI
+![](https://github.com/DavidVar95/Practica-temp-hum-y-dist-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2010.37.09.png?raw=true)
+
+5. colocamos un bloque mqttin y lo vinculamos con el programa en WOKWI
 
 ![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2022.01.30.png?raw=truee)
 
-5. Configurar el bloque con el puerto mqtt con el ip 44.195.202.69 como se muestra en la imagen
+6. Configurar el bloque con el puerto mqtt con el ip 44.195.202.69 como se muestra en la imagen
 
 ![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2022.05.45.png?raw=true)
 
-6. Colocar el bloque json y configurarlo como se muestra en la imagen
+7. Colocar el bloque json y configurarlo como se muestra en la imagen
 
 ![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2022.07.58.png?raw=true)
 
-7. Colocamos dos bloques function y lo configuramos con el siguente codigo
+8. Colocamos dos bloques function y lo configuramos con el siguente codigo
+
+![](https://github.com/DavidVar95/Practica-temp-hum-y-dist-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2010.43.08.png?raw=true)
+
 
 ```
 msg.payload = msg.payload.TEMPERATURA;
@@ -215,21 +221,30 @@ msg.topic = "HUMEDAD";
 return msg;
 
 ```
+```
+msg.payload = msg.payload.DISTANCIA;
+msg.topic = "DISTANCIA";
+return msg;
+
+```
+![](https://github.com/DavidVar95/Practica-temp-hum-y-dist-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2010.40.55.png?raw=true)
+
+
 
 # Resultados
 
 
-![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2022.13.58.png?raw=true)
+![](https://github.com/DavidVar95/Practica-temp-hum-y-dist-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2010.50.07.png?raw=true)
 
 
 En el node-red podememos ver los datos que esta tomando el ESP32
 
 
-![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2022.19.09.png?raw=true))
+![](https://github.com/DavidVar95/Practica-temp-hum-y-dist-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2010.52.21.png?raw=true))
 
-![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2022.19.19.png?raw=true))
+![](https://github.com/DavidVar95/Practica-temp-hum-y-dist-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2010.52.42.png?raw=true))
 
-![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2022.19.29.png?raw=true))
+![](https://github.com/DavidVar95/Practica-temp-hum-y-dist-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2010.52.50.png?raw=true))
 
 # Créditos
 
